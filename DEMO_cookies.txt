@@ -1,0 +1,17 @@
+here your cookies have to be, it should look something like:
+
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+.tiktok.com	TRUE	/	TRUE	0000000000	tt_chain_token	00000000000000000000
+.www.tiktok.com	TRUE	/	TRUE	0000000000	delay_guest_mode_vid	0
+.tiktok.com	TRUE	/	TRUE	0000000000	passport_csrf_token	0000000000000000000000000000000000000000
+.tiktok.com	TRUE	/	FALSE	0000000000	passport_csrf_token_default	000000000000000000000000000000
+.tiktok.com	TRUE	/	FALSE	0000000000	store-country-code-src
+.tiktok.com	TRUE	/	TRUE	0000000000	cookie-consent	{0000000000200000000000000000000000000000000000000000000000000000000000000000000002}
+.www.tiktok.com	TRUE	/	FALSE	0000000000	__tea_cache_tokens_0000	{0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000022}
+www.tiktok.com	FALSE	/	FALSE	0000000000	pre_country	US
+
+...
+and so on

@@ -1,5 +1,13 @@
+#Custom#
+
 # original cookies.txt
 cookies.txt
+
+#mp4 videos
+*.mp4
+
+
+#AUTO-Generated#
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -10,7 +10,9 @@ you can get it with an extension like "Get cookies.txt LOCALLY"
 # Setup
 
 >pip install requirements -r
+
 >save your cookies as cookies.txt in the src folder
+
 >start main.py
 
 # More

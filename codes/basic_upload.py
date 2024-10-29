@@ -10,7 +10,7 @@ if module_path not in sys.path:
     sys.path.append(module_path)
 
 # Now import your modules from that directory
-from tiktok_uploader.upload import upload_video
+from tiktok_uploader.upload import upload_video # type: ignore
 
 ##################################'MAIN'##################################                          
 
@@ -22,4 +22,4 @@ if __name__ == "__main__":
     urllib.request.urlretrieve(URL, FILENAME)
 
     # upload video to TikTok
-    upload_video(FILENAME, description="This is a #cool video I just downloaded. #wow #cool check it out on @tiktok", cookies="cookies.txt") 
+    upload_video(FILENAME, description="Stop It. DO SOMETHING. Videos provided by Pexel", cookies="cookies.txt") 

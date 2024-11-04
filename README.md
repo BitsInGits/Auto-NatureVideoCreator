@@ -13,6 +13,10 @@ you can get it with an extension like "Get cookies.txt LOCALLY"
 
 >save your cookies as cookies.txt in the src folder
 
+>install ImageMagick and FFMPEG
+
+>update edit_video.py and set your Paths for FFMPEG and ImageMagick
+
 >start main.py
 
 # More
@@ -20,6 +24,8 @@ you can get it with an extension like "Get cookies.txt LOCALLY"
 You need to have Google Chrome installed.
 Also https://github.com/Zulko/moviepy needs to be installed.
 And https://github.com/wkaisertexas/tiktok-uploader also.
+And ImageMagick-7.1.1-39-Q16-x64-dll.exe (download and install, add to system path) from https://imagemagick.org/script/download.php
+And ffmpeg-master-latest-win64-gpl.zip (download, extract and move to your desired folder, add to system path) from https://github.com/BtbN/FFmpeg-Builds/releases
 
 # TODO
 -explain setup better
@@ -30,3 +36,6 @@ Then add Subtitles from a txt full motivational texts and music
 Then upload this to tiktok on your profile given in the cookies.txt file
 
 used.txt is a list of all already used videos
+
+quotes.txt is a list of many quotes, where one gets added to the video. in the first line it says wich line index was the last one use,
+so to restart from the top write just a 0 in the first line

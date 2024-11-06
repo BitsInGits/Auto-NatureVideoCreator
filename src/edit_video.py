@@ -8,7 +8,10 @@ def editVideo():
     mpconfig.IMAGEMAGICK_BINARY = r"E:\ImageMagick-7.1.1-Q16\magick.exe"  # Update this path # Set ImageMagick path in MoviePy config
 
     path = os.listdir(r"src\video")[0]
-    video = VideoFileClip('src\\video\\' + path).subclip(0, 1)
+    video = VideoFileClip('src\\video\\' + path)
+    videoLen = min(video.duration, 60)
+    print("video_len: ", videoLen)
+    video = video.subclip(0, videoLen)
     quote = ""
     data = ""
     last_index = 0
@@ -31,7 +34,7 @@ def editVideo():
 
     print("quote: ", quote)
 
-    txt_clip = (TextClip(quote, size='large', fontsize=100, color='black', method='caption').set_position('center').set_duration(10))
+    txt_clip = (TextClip(quote, font ="Arial-Bold", size='large', fontsize=100, color='black', method='caption').set_position('center').set_duration(60 if videoLen > 60 else videoLen))
 
     result = CompositeVideoClip([video, txt_clip])
     result.write_videofile("src\\video\\" + path, fps=30)

@@ -2,7 +2,7 @@ from getVideo import getVideo
 from tiktok_uploader.upload import upload_video
 from edit_video import editVideo
 
-#getVideo()
+getVideo()
 
 editVideo()
 

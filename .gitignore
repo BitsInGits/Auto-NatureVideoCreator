@@ -1,7 +1,13 @@
 #Custom#
 
+# CNN training
+images
+seg_pred
+TrainCNN.py
+
 # tests
 test.py
+test2.py
 
 # original cookies.txt
 cookies.txt

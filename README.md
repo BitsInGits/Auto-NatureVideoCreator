@@ -27,6 +27,8 @@ And https://github.com/wkaisertexas/tiktok-uploader also.
 And ImageMagick-7.1.1-39-Q16-x64-dll.exe (download and install, add to system path) from https://imagemagick.org/script/download.php
 And ffmpeg-master-latest-win64-gpl.zip (download, extract and move to your desired folder, add to system path) from https://github.com/BtbN/FFmpeg-Builds/releases
 
+Training data and script for the image classification model is available, contact me.
+
 # TODO
 -explain setup better
 
@@ -39,3 +41,5 @@ used.txt is a list of all already used videos
 
 quotes.txt is a list of many quotes, where one gets added to the video. in the first line it says wich line index was the last one use,
 so to restart from the top write just a 0 in the first line
+
+in the image_classifier_model.h5 file, is the configuration of an CNN for image classification, to adjust the sounds

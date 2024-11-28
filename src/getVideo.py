@@ -52,14 +52,20 @@ def getVideo():
 
     i = 0
     while i < 1000:
-        href = articles[i].find_element(By.CSS_SELECTOR, ":scope > * a").get_attribute("href")
-        img_url = articles[i].find_element(By.CSS_SELECTOR, "img").get_attribute("src")  # Extract image URL
+        try:
+            href = articles[i].find_element(By.CSS_SELECTOR, ":scope > * a").get_attribute("href")
+            img_url = articles[i].find_element(By.CSS_SELECTOR, "img").get_attribute("src")  # Extract image URL
         
-        i += 1
+            i += 1
 
-        # Skip if the video URL is already in the used.txt file
-        if in_file("src/used.txt", href) != True:
-            break
+            # Skip if the video URL is already in the used.txt file
+            if in_file("src/used.txt", href) != True:
+                break
+        except Exception:
+            print("error occurred, maybe all pexel videos have been used, restart with old vieos")
+            # clear the txt file with all already used links -> reusing already downloaded videos
+            with open('src/used.txt', 'w') as file:
+                pass  # Nothing to write, file will be emptied
 
     if i > 999:
         raise ValueError('Looked through over 1000 videos from Pexels, and nothing new is uploaded.')

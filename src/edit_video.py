@@ -1,15 +1,18 @@
-from moviepy.editor import VideoFileClip, TextClip, CompositeVideoClip
+from moviepy.editor import VideoFileClip, TextClip, AudioFileClip, CompositeVideoClip
 import moviepy.config as mpconfig
 from tensorflow.keras.models import load_model # type: ignore
 from tensorflow.keras.preprocessing.image import load_img, img_to_array # type: ignore
 import os
 import numpy as np
+import random
+
 
 # Define image dimensions
 IMG_HEIGHT = 288
 IMG_WIDTH = 228
 IMG_CHANNELS = 3
 
+# Load the trained model
 model = load_model('src/final_model.keras')  # Load the model saved from the first script
 
 def classify_image(image_path):
@@ -31,7 +34,6 @@ def classify_image(image_path):
 
 def editVideo():
     mpconfig.FFMPEG_BINARY = "ffmpeg"  # Ensure ffmpeg is in the system PATH  # Set ffmpeg path in MoviePy config
-
     mpconfig.IMAGEMAGICK_BINARY = r"E:\ImageMagick-7.1.1-Q16\magick.exe"  # Update this path # Set ImageMagick path in MoviePy config
 
     path = os.listdir(r"src\video")[0]
@@ -61,7 +63,22 @@ def editVideo():
 
     print("quote: ", quote)
 
-    txt_clip = (TextClip(quote, font ="Arial-Bold", size='large', fontsize=100, color='black', method='caption').set_position('center').set_duration(60 if videoLen > 60 else videoLen))
+    #txt_clip = (TextClip(quote, font ="Arial-Bold", size='large', fontsize=100, color='black', method='caption').set_position('center').set_duration(60 if videoLen > 60 else videoLen))
+    txt_clip = (TextClip(quote, font="Impact", size='large', fontsize=150, color='white', 
+            stroke_color='black', stroke_width=10, method='caption')
+            .set_position('center')
+            .set_duration(60 if videoLen > 60 else videoLen))
 
-    result = CompositeVideoClip([video, txt_clip])
-    result.write_videofile("src\\video\\" + path, fps=30)
+    #define image type, define audio
+    predicted_class = classify_image("src\image\\" + os.listdir(r"src\image")[0])
+    print("predicted class: ", predicted_class)
+
+    if predicted_class == 'forest':
+        audio = AudioFileClip(os.path.join('src/sounds/forest', random.choice(os.listdir('src/sounds/forest')))).subclip(0, txt_clip.duration) # add forest sounds
+    elif predicted_class == 'mountain':
+        audio = AudioFileClip(os.path.join('src/mountain/forest', random.choice(os.listdir('src/sounds/mountain')))).subclip(0, txt_clip.duration) # add mountain sounds
+    elif predicted_class == 'sea':
+        audio = AudioFileClip(os.path.join('src/sounds/sea', random.choice(os.listdir('src/sounds/sea')))).subclip(0, txt_clip.duration) # add sea sounds
+
+    result = CompositeVideoClip([video, txt_clip]).set_audio(audio)
+    result.write_videofile("src\\video_output\\" + path, fps=30)

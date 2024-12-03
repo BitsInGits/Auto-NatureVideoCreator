@@ -3,10 +3,8 @@
 This Project is designed, to retireve calming videos of the nature from pexels.com,
 then add some motivation-subtitles and upload this to TikTok (maybe more later).
 
-https://github.com/wkaisertexas/tiktok-uploader
-
-You will use you TikTok Session Cookies to rejoin the session, for that you need it as cookies.txt file,
-you can get it with an extension like "Get cookies.txt LOCALLY"
+<!-- You will use you TikTok Session Cookies to rejoin the session, for that you need it as cookies.txt file,
+you can get it with an extension like "Get cookies.txt LOCALLY" -->
 # Setup
 
 >pip install requirements -r
@@ -23,7 +21,6 @@ you can get it with an extension like "Get cookies.txt LOCALLY"
 
 You need to have Google Chrome installed.
 Also https://github.com/Zulko/moviepy needs to be installed.
-And https://github.com/wkaisertexas/tiktok-uploader also.
 And ImageMagick-7.1.1-39-Q16-x64-dll.exe (download and install, add to system path) from https://imagemagick.org/script/download.php
 And ffmpeg-master-latest-win64-gpl.zip (download, extract and move to your desired folder, add to system path) from https://github.com/BtbN/FFmpeg-Builds/releases
 

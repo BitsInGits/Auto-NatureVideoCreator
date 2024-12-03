@@ -76,9 +76,34 @@ def editVideo():
     if predicted_class == 'forest':
         audio = AudioFileClip(os.path.join('src/sounds/forest', random.choice(os.listdir('src/sounds/forest')))).subclip(0, txt_clip.duration) # add forest sounds
     elif predicted_class == 'mountain':
-        audio = AudioFileClip(os.path.join('src/mountain/forest', random.choice(os.listdir('src/sounds/mountain')))).subclip(0, txt_clip.duration) # add mountain sounds
+        audio = AudioFileClip(os.path.join('src/sounds/mountain', random.choice(os.listdir('src/sounds/mountain')))).subclip(0, txt_clip.duration) # add mountain sounds
     elif predicted_class == 'sea':
         audio = AudioFileClip(os.path.join('src/sounds/sea', random.choice(os.listdir('src/sounds/sea')))).subclip(0, txt_clip.duration) # add sea sounds
 
     result = CompositeVideoClip([video, txt_clip]).set_audio(audio)
     result.write_videofile("src\\video_output\\" + path, fps=30)
+
+    folder_path = 'src/video_output'
+    new_name = 'Stop it, do something!'
+
+    # Ensure the folder exists
+    if not os.path.exists(folder_path):
+        print(f"Folder '{folder_path}' does not exist.")
+    else:
+        # Get a list of files in the folder
+        files = os.listdir(folder_path)
+        if not files:
+            print(f"No files found in folder '{folder_path}'.")
+        else:
+            # Get the first file
+            first_file = files[0]
+            # Extract the file extension
+            file_extension = os.path.splitext(first_file)[1]
+            # Define the new filename with extension
+            new_filename = f"{new_name}{file_extension}"
+            # Build the full paths
+            old_file_path = os.path.join(folder_path, first_file)
+            new_file_path = os.path.join(folder_path, new_filename)
+            # Rename the file
+            os.rename(old_file_path, new_file_path)
+            print(f"Renamed '{first_file}' to '{new_filename}'.")

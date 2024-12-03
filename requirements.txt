@@ -1,6 +1,6 @@
 selenium
 webdriver-manager
-tiktok-uploader
 setuptools
-moviepy[optional]
+moviepy
 ImageMagick
+psutil

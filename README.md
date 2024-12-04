@@ -16,7 +16,7 @@ you can get it with an extension like "Get cookies.txt LOCALLY" -->
 >update edit_video.py and set your Paths for FFMPEG and ImageMagick
 
 >start main.py
-
+ 
 # More
 
 You need to have Google Chrome installed.

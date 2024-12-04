@@ -1,0 +1,6 @@
+selenium
+webdriver-manager
+setuptools
+moviepy
+ImageMagick
+psutil

@@ -66,7 +66,7 @@ def uploadVideo():
         # Click on the "Select video" button
         select_video_button.click()
 
-        time.sleep(5)
+        time.sleep(15)
 
         # Simulate the file upload
         file_input = driver.find_element(By.XPATH, "//input[@type='file']")
@@ -95,7 +95,7 @@ def uploadVideo():
         time.sleep(20)
 
         # Wait until the button with `aria-disabled="false"` is available
-        wait = WebDriverWait(driver, 100)  # Timeout after 20 seconds
+        wait = WebDriverWait(driver, 600)  # Timeout after 20 seconds
         button = wait.until(
             EC.presence_of_element_located(
                 (

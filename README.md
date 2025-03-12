@@ -26,17 +26,9 @@ And ffmpeg-master-latest-win64-gpl.zip (download, extract and move to your desir
 
 Training data and script for the image classification model is available, contact me.
 
-# TODO
--explain setup better
-
 # Technicals
-It will download randome one of the 20 Top Videos on Pexel with the tag nature thats vertical.
-Then add Subtitles from a txt full motivational texts and music
-Then upload this to tiktok on your profile given in the cookies.txt file
+The script downloads a randomly selected video from the top 20 vertical "nature" videos on Pexels. It then adds subtitles using text from a file containing motivational quotes, overlays background music, and uploads the final video to TikTok using the account credentials specified in the cookies.txt file.
 
-used.txt is a list of all already used videos
-
-quotes.txt is a list of many quotes, where one gets added to the video. in the first line it says wich line index was the last one use,
-so to restart from the top write just a 0 in the first line
-
-in the image_classifier_model.h5 file, is the configuration of an CNN for image classification, to adjust the sounds
+used.txt: Keeps track of all previously used videos to prevent duplicates.
+quotes.txt: Contains a collection of motivational quotes. The first line stores the index of the last used quote; to reset and start from the beginning, set this value to 0.
+image_classifier_model.h5: A pre-trained CNN model for image classification, used to adjust the accompanying audio.
